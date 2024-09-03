@@ -27,6 +27,23 @@
    * ブラウザ画面に出力して下さい
    * FizzBuzz.pngが結果のイメージです
    */
+
+
+   for( let i = 1; i <= 100; i ++ ) {//100までループ
+  if( i % 15 === 0 ) {//15でfizzbuzz
+    document.write('<p>FizzBuzz</p>');
+  } else if ( i % 3 === 0 ) {//5でfizz
+    document.write( '<p>Buzz</p>' );
+  } else if ( i % 5 === 0 ) {//3でfizz
+    document.write( '<p>Fizz</p>' );
+    
+  } else {
+    document.write(i+ '<br>');//なんでもない場合
+  }
+ }
+
+
+
 </script>
 </body>
 </html>
