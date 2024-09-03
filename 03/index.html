@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -9,23 +10,43 @@
   <link rel="stylesheet" href="../00-tools/css/base.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-<div class="wrapper">
-  <p class="modal-show">CLICK!!</p>
-  <div class="modal" style="display: none;">
-    <div class="modal-content">
-      <div class="modal-text">MODAL WINDOW</div>
-      <button type="button" class="modal-close">x</button>
+  <div class="wrapper">
+    <p class="modal-show" id=btn >CLICK!!</p>
+    <div class="modal" id = mymodal  style="display: none;">
+      <div class="modal-content">
+        <div class="modal-text">MODAL WINDOW</div>
+        <button type="button" id=close class="modal-close">x</button>
+      </div>
     </div>
   </div>
-</div>
-<script defer>
-  /* 今回やるのはモーダルです。
-   * .modal-show をクリックすることで .modal を表示させる
-   * .modal-close をクリックで .modal の表示を解除する
-   *
-   * 
-   */
-</script>
+  <script defer>
+
+  //  今回やるのはモーダルです。
+  //  * .modal-show をクリックすることで .modal を表示させる
+  //  * .modal-close をクリックで .modal の表示を解除する
+  
+  var modal = document.getElementById("mymodal");//id取得
+  var btn = document.getElementById("modal-show");//id取得
+  var close = document.getElementById("modal-close");//id取得
+
+  var btn = document.getElementById('btn');//id取得
+    btn.addEventListener('click', function () {//クリック
+     modal.style.display = "block";//表示
+    
+});
+
+  var close = document.getElementById('close');//id取得
+    close.addEventListener('click', function () {//クリック
+     modal.style.display = "none";//閉じる
+    
+});
+
+
+
+
+  </script>
 </body>
+
 </html>
