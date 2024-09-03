@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -9,65 +10,217 @@
   <link rel="stylesheet" href="../00-tools/css/base.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-<h1 class="u-mbm is-big">JS2</h1>
-<div class="wrapper">
-  <div class="u-mbm btn">Q1</div>
-  <div class="u-mbm btn">Q2</div>
-  <div class="u-mbm btn">Q3</div>
-  <div class="u-mbm btn">Q4</div>
-  <div class="u-mbm btn">Q5</div>
-  <div class="u-mbm btn">Q6</div>
-  <div class="u-mbm btn">Q7</div>
-</div>
+  <h1 class="u-mbm is-big">JS2</h1>
+  <div class="wrapper">
+    <div class="u-mbm btn" id="Q1">Q1</div>
+    <div class="u-mbm btn" id="Q2">Q2</div>
+    <div class="u-mbm btn" id="Q3">Q3</div>
+    <div class="u-mbm btn" id="Q4">Q4</div>
+    <div class="u-mbm btn" id="Q5">Q5</div>
+    <div id="Q6" class="u-mbm btn" data-color="red">Q6</div>
+    <div id="Q7" class="u-mbm btn" data-color="blue">Q7</div>
+  </div>
 
-<script defer>
-  /**
-   * 第1問 id="q1"の要素をクリックしたら、下記のconfirmを出力
-   * 年代を確認しますか？
-   * trueの場合
-   * 変数に年齢を入れ、以下の条件の時、指定された"テキスト"をアラートで出力せよ。
-   *
-   * 0~1歳：⚪︎歳のあなたは乳児でちゅ。
-   * 2~6歳：⚪︎歳のあなたは幼児でしゅ。
-   * 7~12歳：⚪︎歳のあなたは小学生だよ。
-   * 13~15歳：⚪︎歳のあなたは中学生だぜ。
-   * 16~18歳：⚪︎歳のあなたは高校生っす。
-   * 19~22歳：⚪︎歳のあなたは大学生です。
-   * 23~59歳：⚪︎歳のあなたは社会人でございます。
-   * 60~99歳：⚪︎歳のあなたは高齢者じゃ。
-   * 100~：すごい。
-   * それ以外（そもそも数字じゃ無いなど）：ちゃんといれてください。
-   *
-   * falseの場合
-   * 何もしない
-   */
+  <script defer>
 
-  // 第2問 id="q2"の要素をクリックしたらfor文を用いて、12345678910という文字列を作り、#q2の後にその文字列を挿入せよ。
+    /**
+     * 第1問 id="q1"の要素をクリックしたら、下記のconfirmを出力
+     * 年代を確認しますか？
+     * trueの場合
+     * 変数に年齢を入れ、以下の条件の時、指定された"テキスト"をアラートで出力せよ。
+     *
+     * 0~1歳：⚪︎歳のあなたは乳児でちゅ。
+     * 2~6歳：⚪︎歳のあなたは幼児でしゅ。
+     * 7~12歳：⚪︎歳のあなたは小学生だよ。
+     * 13~15歳：⚪︎歳のあなたは中学生だぜ。
+     * 16~18歳：⚪︎歳のあなたは高校生っす。
+     * 19~22歳：⚪︎歳のあなたは大学生です。
+     * 23~59歳：⚪︎歳のあなたは社会人でございます。
+     * 60~99歳：⚪︎歳のあなたは高齢者じゃ。
+     * 100~：すごい。
+     * それ以外（そもそも数字じゃ無いなど）：ちゃんといれてください。
+     *
+     * falseの場合
+     * 何もしない
+     */
+    var Q1 = document.getElementById('Q1');//id取得
+    Q1.addEventListener('click', function () {//クリック処理
+      gene = window.prompt("年代を確認しますか？");//ポップアップが表示される　gene=入力する数字
 
-  // 第3問 id="q3"の要素をクリックしたらfor文、if文を用いて、1~100の数字で3と7を約数に持つ（3と7で割れる）整数で文字列を作り、#q3の後にその文字列を挿入せよ。
+      if (gene === null) {//キャンセルにする
+        return;//戻る
+      }
 
-  // 第4問 id="q4"の要素をクリックしたらfor文を用いて、[2,4,6,8,10,12,14,16,18,20]という配列をconsoleに出力せよ。
+      if (gene >= 0 && gene <= 1) { //if年齢が0歳以上１未満だったら
+        alert(gene + "歳のあなたは乳児でちゅ。");//年齢（gene)＋歳のあなたは乳児でちゅ
 
-  /**
-   * 第5問 id="q5"の要素をクリックし、以下の情報をそれぞれ表示せよ。
-   *
-   * ①今開いているファイル（index.html）のパス
-   * ②年（2021）
-   * ③月（1~12）
-   * ④日（1~31）
-   *
-   */
+      } else if (gene >= 2 && gene <= 6) {//if年齢が2歳以上6未満だったら
+        alert(gene + "歳のあなたは幼児でしゅ。");//アラート表示　年齢（gene)＋歳のあなたは幼児でしゅ
 
-  /**
-   * 第6問
-   * id="q6"の要素をクリックすると要素の文字が赤くなり、
-   * id="q7"の要素をクリックすると要素の文字を青くさせよ。
-   *
-   * 但し、コールバック関数は１つで実装すること。
-   * 必要に応じて、要素に属性などは追加して良いものとします。
-   */
+      } else if (gene >= 7 && gene <= 12) {//if年齢が7歳以上１2未満だったら
+        alert("gene歳のあなたは小学生だよ。");//アラート表示　年齢（gene)＋歳のあなたは小学生だよ
 
-</script>
+      } else if (gene >= 13 && gene <= 15) {//if年齢が13歳以上１5未満だったら
+        alert(gene + "歳のあなたは中学生だぜ。");//アラート表示　年齢（gene)＋歳のあなたは中学生だぜ
+
+      } else if (gene >= 16 && gene <= 18) {//if年齢が16歳以上１8未満だったら
+        alert(gene + "歳のあなたは高校生っす。");//アラート表示　年齢（gene)＋歳のあなたは高校生っす
+
+      } else if (gene >= 19 && gene <= 22) {//if年齢が19歳以上22未満だったら
+        alert(gene + "歳のあなたは大学生です。");//アラート表示　年齢（gene)＋歳のあなたは大学生です
+
+      } else if (gene >= 23 && gene <= 59) {//if年齢が23歳以上59未満だったら
+        alert(gene + "歳のあなたは社会人でございます。");//アラート表示　年齢（gene)＋歳のあなたは社会人でございます
+
+      } else if (gene >= 60 && gene <= 99) {//if年齢が60歳以上99未満だったら
+        alert(gene + "歳のあなたは高齢者じゃ。");//アラート表示　年齢（gene)＋歳のあなたは高齢者じゃ
+
+      } else if (gene >= 100) {//if年齢が100歳以上だったら
+        alert("すごい。");//アラート「すごい」
+
+      } else {
+        alert("ちゃんといれてください。")//数字でない場合
+      }
+    }
+    )
+
+
+
+    // 第2問 id="q2"の要素をクリックしたらfor文を用いて、12345678910という文字列を作り、#q2の後にその文字列を挿入せよ。
+    var Q2 = document.getElementById('Q2');//id取得
+    Q2.addEventListener('click', function () {//クリック処理
+      var string = "";//空の配列
+      for (var i = 1; i <= 10; i++) {//1~10までループ
+        string += i + "<br>"; //文字列を作成 string+iでも可能 
+      }
+      var div = document.createElement("div");//HTML要素を生成
+      div.innerHTML = string;//div内に表示する内容を設定
+      div.className = "u-mbm btn";//クラス名を設定
+
+      Q2.insertAdjacentElement('afterend', div);//Q2の後にdiv要素を挿入。
+
+      Q2.appendChild(div);///div要素を子要素として追加
+
+    });
+
+
+    // 第3問 id="q3"の要素をクリックしたらfor文、if文を用いて、1~100の数字で3と7を約数に持つ（3と7で割れる）整数で文字列を作り、#q3の後にその文字列を挿入せよ。
+    var Q3 = document.getElementById('Q3');//id取得
+    Q3.addEventListener('click', function () {//クリック処理
+      let count = "";//空の配列
+      for (let i = 1; i <= 100; i++) { //1から100までのループ
+        if (i % 3 === 0 && i % 7 === 0) {    // 3と7で割り切れるかチェック
+          count += i + "<br>";//文字列を作成
+        }
+      }
+
+      var div = document.createElement("div");//div要素を作成
+      div.innerHTML = count;//div内に表示する内容を設定
+      div.className = "u-mbm btn";//クラス名を設定
+
+      Q3.insertAdjacentElement('afterend', div);//Q3の後にdiv要素を挿入。
+
+      Q3.appendChild(div);//div要素を子要素として追加
+
+    });
+
+
+
+
+    // 第4問 id="q4"の要素をクリックしたらfor文を用いて、[2,4,6,8,10,12,14,16,18,20]という配列をconsoleに出力せよ。
+    var Q4 = document.getElementById('Q4');//id取得
+    Q4.addEventListener('click', function () {
+      var array = [];//空の配列。最初から中身のある配列を作れるように↓
+      for (var i = 1; i <= 10; i++) {//1~20を繰り返す
+        array.push(i * 2);//変数(10まで)*2で20まで出力
+      }
+      console.log(array);//配列をコンソールに表示
+    });
+
+
+
+
+
+
+    /**
+     * 第5問 id="q5"の要素をクリックし、以下の情報をそれぞれ表示せよ。
+     *
+     * ①今開いているファイル（index.html）のパス
+     * ②年（2021）
+     * ③月（1~12）
+     * ④日（1~31）
+     *
+     */
+
+    //①
+    var url = location.href;//URLを取得
+    var path = location.pathname;//パスを取得
+    var Q5 = document.getElementById('Q5'); /A/id取得
+    Q5.addEventListener('click', function () {//クリック
+      alert(path)//パスを表示
+
+    });
+
+    //②
+    var currentDate = new Date()//オブジェクト作成
+     var year = currentDate.getFullYear()//年を修得
+      var Q5 = document.getElementById('Q5');//id取得
+       Q5.addEventListener('click', function () {
+        alert(year)//年表示
+    });
+
+    //③
+    var currentDate = new Date()//オブジェクト作成
+     var month = currentDate.getMonth()//現在の月を修得
+      var Q5 = document.getElementById('Q5');//id取得
+       Q5.addEventListener('click', function () {
+        alert(month)//月表示
+    });
+
+    //④
+    var currentDate = new Date()//オブジェクト作成
+    var date = currentDate.getDate()//現在の日時を修得
+    var Q5 = document.getElementById('Q5');//id取得
+    Q5.addEventListener('click', function () {
+      alert(date)//日付表示
+    });
+
+
+    /**
+     * 第6問
+     * id="q6"の要素をクリックすると要素の文字が赤くなり、
+     * id="q7"の要素をクリックすると要素の文字を青くさせよ。
+     
+     * 
+     *
+     * 但し、コールバック関数は１つで実装すること。
+     * 必要に応じて、要素に属性などは追加して良いものとします。
+     */
+
+    var Q6 = document.getElementById('Q6');//id取得
+    var Q7 = document.getElementById('Q7');//id取得
+     Q6.addEventListener('click', changecolor);//クリック色変え処理
+     Q7.addEventListener('click', changecolor);//クリック色変え処理
+
+    function changecolor(callback) {//色変えイベント発生。ルーティーン化
+      var newcolor = callback.target;//イベントが発生した要素を取得
+       var color = newcolor.getAttribute('data-color')//色を取得
+      newcolor.style.color = color//色を変更
+       var anothercolor;//別の変数を定義
+      if (newcolor.id === 'Q6') {
+        anothercolor = document.getElementById('Q7');
+      } else {
+        anothercolor = document.getElementById('Q6');
+      }//Q6またはQ7どっちかを選択します。
+         anothercolor.style.color = color;//同じ色をもう片方にも適用
+
+    }
+
+
+
+
+
+  </script>
 </body>
-</html>
