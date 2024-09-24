@@ -45,7 +45,7 @@
     </div>
     <div id="Q8" class="u-mbm btn">Q8</div>
     <div id="Q9" class="u-mbm btn">Q9</div>
-    
+
     <!-- <-- まずid付与から始める -->
     <ul class="u-mbm lists">
       <li id="Q101">Q10_1</li>
@@ -107,24 +107,24 @@
     Q4.addEventListener('click', function () {
       var xxx = document.createElement('p');
       //xxxを立てる
-       xxx.textContent = "テキスト";
+      xxx.textContent = "テキスト";
       //テクスト作成
-        Q4.parentNode.insertBefore(xxx, Q4);
+      Q4.parentNode.insertBefore(xxx, Q4);
       //位置付け（要素外前）親ノードの指定
 
       var xxx2 = document.createElement('p');
-       xxx2.textContent = "テキスト";
-        Q4.parentNode.insertBefore(xxx2, Q4.nextSibling);
+      xxx2.textContent = "テキスト";
+      Q4.parentNode.insertBefore(xxx2, Q4.nextSibling);
       //位置付け（要素外後）親ノードの指定
 
       var xxx3 = document.createElement('p');
-       xxx3.textContent = "テキスト";
-        Q4.insertBefore(xxx3, Q4.firstChild);
+      xxx3.textContent = "テキスト";
+      Q4.insertBefore(xxx3, Q4.firstChild);
       //位置付け（要素外前）子ノードの指定
 
       var xxx4 = document.createElement('p');
-       xxx4.textContent = "テキスト";
-        Q4.appendChild(xxx4);
+      xxx4.textContent = "テキスト";
+      Q4.appendChild(xxx4);
       //位置付け（要素内後）子ノードの指定
 
 
@@ -154,111 +154,111 @@
 
 
 
-      // 第7問 Q7の要素をクリックしたら、その要素が「何番目のdlの子要素」かをconsole.log()とalert()を用いて表示させよ。（最初の要素は0ではなく1と表示されること）
+    // 第7問 Q7の要素をクリックしたら、その要素が「何番目のdlの子要素」かをconsole.log()とalert()を用いて表示させよ。（最初の要素は0ではなく1と表示されること）
     var Q7_1 = document.getElementById('Q7_1');
-    
+
     const child = document.getElementById("Q7");
     Q7_1.addEventListener('click', function () {
-     //クリック処理
+      //クリック処理
       console.log("1");
-     //コンソール表示
+      //コンソール表示
 
       alert("1");
       //アラート表示
-     });
+    });
 
-     Q7_2.addEventListener('click', function () {
+    Q7_2.addEventListener('click', function () {
       console.log("2");
       alert("2");
-     });
+    });
 
-     Q7_3.addEventListener('click', function () {
+    Q7_3.addEventListener('click', function () {
       console.log("3");
       alert("3");
-     });
+    });
 
-     Q7_4.addEventListener('click', function () {
+    Q7_4.addEventListener('click', function () {
       console.log("4");
       alert("4");
-     });
+    });
 
-     Q7_5.addEventListener('click', function () {
+    Q7_5.addEventListener('click', function () {
       console.log("5");
       alert("5");
-     });
+    });
 
 
 
-      // 第8問 Q8の要素をhoverしたらis-bigというクラスを付与し、hoverが外れたら、クラスを削除せよ。
-      var Q8 = document.getElementById('Q8');
-      Q8.addEventListener('mouseover', function () {
-        Q8.classList.add('is-big');
-        //１つ目の処理　BIg要素を与える
-      });
+    // 第8問 Q8の要素をhoverしたらis-bigというクラスを付与し、hoverが外れたら、クラスを削除せよ。
+    var Q8 = document.getElementById('Q8');
+    Q8.addEventListener('mouseover', function () {
+      Q8.classList.add('is-big');
+      //１つ目の処理　BIg要素を与える
+    });
 
-      Q8.addEventListener('mouseleave', function () {
-        Q8.classList.remove('is-big');
-        //BIg要素を除く
-      });
+    Q8.addEventListener('mouseleave', function () {
+      Q8.classList.remove('is-big');
+      //BIg要素を除く
+    });
 
-      //   // 第9問 Q9の要素をクリックしたらこの要素にdata属性を設定し、その内容をconsoleに表示せよ。
-      var Q9 = document.getElementById('Q9');
-      Q9.addEventListener('click', function () {
-        Q9.setAttribute('data-09', 'Q9data');
-        //data属性を設定
-        console.log(Q9.getAttribute('data-09'))
-        //consoleに表示
-      });
+    //   // 第9問 Q9の要素をクリックしたらこの要素にdata属性を設定し、その内容をconsoleに表示せよ。
+    var Q9 = document.getElementById('Q9');
+    Q9.addEventListener('click', function () {
+      Q9.setAttribute('data-09', 'Q9data');
+      //data属性を設定
+      console.log(Q9.getAttribute('data-09'))
+      //consoleに表示
+    });
 
-      //   // 第10問 Q10の子要素をクリックしたら、その要素のインデックスと等しいid="q11"の子要素にis-bigというクラスを追加し、それ以外のクラスからは削除せよ。（インデックスの一致する要素だけにis-bigがついている状態）
-      
-      var Q10_1 = document.getElementById('Q101');
-      var Q10_2= document.getElementById('Q10_2');
-      var Q10_3 = document.getElementById('Q10_3');
-      var Q11_1 = document.getElementById('Q111');
-      var Q11_2 = document.getElementById('Q11_2');
-      var Q11_3 = document.getElementById('Q11_3');
-      //ID修得
+    //   // 第10問 Q10の子要素をクリックしたら、その要素のインデックスと等しいid="q11"の子要素にis-bigというクラスを追加し、それ以外のクラスからは削除せよ。（インデックスの一致する要素だけにis-bigがついている状態）
 
-      Q10_1.addEventListener('click', function () {
-        Q11_1.classList.add('is-big');
-        //大きくする
-        Q11_2.classList.remove('is-big');
-        Q11_3.classList.remove('is-big');
-        //Q11_1以外を小さくする
+    var Q10_1 = document.getElementById('Q10_1');
+    var Q10_2 = document.getElementById('Q10_2');
+    var Q10_3 = document.getElementById('Q10_3');
+    var Q11_1 = document.getElementById('Q11_1');
+    var Q11_2 = document.getElementById('Q11_2');
+    var Q11_3 = document.getElementById('Q11_3');
+    //ID修得
 
-      });
+    Q10_1.addEventListener('click', function () {
+      Q11_1.classList.add('is-big');
+      //大きくする
+      Q11_2.classList.remove('is-big');
+      Q11_3.classList.remove('is-big');
+      //Q11_1以外を小さくする
 
-      Q10_2.addEventListener('click', function () {
-        Q11_2.classList.add('is-big');
-        Q11_1.classList.remove('is-big');
-        Q11_3.classList.remove('is-big');
-      });
+    });
 
-      Q10_3.addEventListener('click', function () {
-        Q11_3.classList.add('is-big');
-        Q11_1.classList.remove('is-big');
-        Q11_2.classList.remove('is-big');
-      });
+    Q10_2.addEventListener('click', function () {
+      Q11_2.classList.add('is-big');
+      Q11_1.classList.remove('is-big');
+      Q11_3.classList.remove('is-big');
+    });
 
-
+    Q10_3.addEventListener('click', function () {
+      Q11_3.classList.add('is-big');
+      Q11_1.classList.remove('is-big');
+      Q11_2.classList.remove('is-big');
+    });
 
 
-      //  第11問 Q12をクリックしたら、Q13リストのli要素の順番と中身のテキストをconsoleに表示させよ。
-      var Q12 = document.getElementById('Q12');
-      Q12.addEventListener('click', function () {
-        var Q13 = document.getElementById('Q13');
-        var list = Q13.querySelectorAll("li");
-        //li要素のリスト作成
-        console.log(list);
-        //コンソールでリスト表示
-        for (var i = 0; i < 3; i++) {
-          //for（反復処理）順番を入れる
-          console.log(list[i].innerText);
-          //中身のテクストを表示
-        }
 
-      })
+
+    //  第11問 Q12をクリックしたら、Q13リストのli要素の順番と中身のテキストをconsoleに表示させよ。
+    var Q12 = document.getElementById('Q12');
+    Q12.addEventListener('click', function () {
+      var Q13 = document.getElementById('Q13');
+      var list = Q13.querySelectorAll("li");
+      //li要素のリスト作成
+      console.log(list);
+      //コンソールでリスト表示
+      for (var i = 0; i < 3; i++) {
+        //for（反復処理）順番を入れる
+        console.log(list[i].innerText);
+        //中身のテクストを表示
+      }
+
+    })
 
   </script>
 </body>
